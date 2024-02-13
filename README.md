@@ -1,1 +1,2 @@
-Dit is het mini project van de beste groep van ProjectB
+MiniProject van de meest homofobe groep van ProjectB
+
