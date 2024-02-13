@@ -2,4 +2,4 @@
 👸Reserve-Captain: Erik Tanis 👑
 🙇‍♂️Code-Slaaf: Jesse Sminia(misselijk baassie)
 🙇‍♂️Code-Slaaf: Vasili Tzoumas
-🦁Code-Mascotte: Luka Noort
+🦁Code-Mascotte: Luca Noort
