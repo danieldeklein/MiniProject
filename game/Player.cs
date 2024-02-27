@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+
 public class Player
 {
     public int CurrentHitPoints;
@@ -6,7 +8,7 @@ public class Player
     public int MaximumHitPoints;
     public string Name;
     private Random RandomNumberGenerator = new Random();
-
+    
     public Player(string Name, int MaximumHitPoints)
     {
         CurrentHitPoints = 100;
@@ -44,8 +46,7 @@ public class Player
                     Console.WriteLine($"You have {CurrentHitPoints} hit points remaining.");
                 }
             }
-        }    
-    
+        }
     }
     public void AddWeapon(){
         if (World.QuestByID(1).Completed)
@@ -53,5 +54,4 @@ public class Player
             CurrentWeapon = World.WeaponByID(2);
         }
     }
-
 }
