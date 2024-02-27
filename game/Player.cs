@@ -47,5 +47,11 @@ public class Player
         }    
     
     }
+    public void AddWeapon(){
+        if (World.QuestByID(1).Completed)
+        {
+            CurrentWeapon = World.WeaponByID(2);
+        }
+    }
 
 }
