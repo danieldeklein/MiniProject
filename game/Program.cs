@@ -1,73 +1,26 @@
-﻿﻿namespace game;
+﻿using System;
 
-class Program
+namespace game
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello, World!");
+        public int playerY = 5;
+        public int playerX = 3;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Your current location is: " + locatie);
+            Console.WriteLine("  P  ");
+            Console.WriteLine("  A  ");
+            Console.WriteLine("VFTGBS");
+            Console.WriteLine("  H  ");
 
-        string[,] map = new string[4, 6]
-        {
-            { " ", " ", "P", " ", " ", " "},
-            { " ", " ", "A", " ", " ", " "},
-            { "V", "F", "T", "G", "B", "S"},
-            { " ", " ", "H", " ", " ", " "}
-        };
+            Console.WriteLine("Which direction do you want to go? (north/south/east/west)");
+            string direction = Console.ReadLine();
 
-        int playerX = 3;
-        int playerY = 6;
+            // TODO: Handle the user's chosen direction and update the game accordingly
 
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 6; j++)
-            {
-                if (i == playerX && j == playerY)
-                {
-                    Console.Write("H");
-                }
-                else
-                {
-                    Console.Write(map[i, j]);
-                }
-            }
-            Console.WriteLine();
-        }
+            Console.WriteLine("You chose to go " + direction + "."); // Placeholder output
 
-        Console.WriteLine("Choose a direction to move (up, down, left, right):");
-        string? direction = Console.ReadLine();
-
-        if (direction == "up" && playerX > 0)
-        {
-            playerX--;
-        }
-        else if (direction == "down" && playerX < 4)
-        {
-            playerX++;
-        }
-        else if (direction == "left" && playerY > 0)
-        {
-            playerY--;
-        }
-        else if (direction == "right" && playerY < 6)
-        {
-            playerY++;
-        }
-
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                if (i == playerX && j == playerY)
-                {
-                    Console.Write("H");
-                }
-                else
-                {
-                    Console.Write(map[i, j]);
-                }
-            }
-            Console.WriteLine();
         }
     }
-    
 }
