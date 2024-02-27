@@ -1,4 +1,4 @@
-class Player
+public class Player
 {
 
     public int CurrentHitPoints;
@@ -10,8 +10,8 @@ class Player
     public Player(string Name, int MaximumHitPoints)
     {
         CurrentHitPoints = 100;
-        CurrentLocation = new Location(0, "Home", "Home", null, null);
-        CurrentWeapon = new Weapon(0, "First", 1);
+        CurrentLocation = World.LocationByID(1);
+        CurrentWeapon = World.WeaponByID(1);
         this.Name = Name;
         this.MaximumHitPoints = MaximumHitPoints;
     }

@@ -1,4 +1,4 @@
-class Weapon
+public class Weapon
 {
     public int ID;
     public int maximumDamage;

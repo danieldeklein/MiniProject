@@ -1,4 +1,4 @@
-class SuperAdventure
+public class SuperAdventure
 {
 
     public Monster CurrentMonster;
