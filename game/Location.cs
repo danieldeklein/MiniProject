@@ -12,7 +12,7 @@ public class Location
     public Location? LocationToWest;
 
 
-    public Location(int ID, string Name, string Description, Quest quest, Monster monster)
+    public Location(int ID, string Name, string Description, Quest? quest, Monster? monster)
     {
         this.ID = ID;
         this.Name = Name;
