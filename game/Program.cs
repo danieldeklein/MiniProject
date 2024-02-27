@@ -2,8 +2,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        
         // Start the game
-        Location currentLocation = World.LocationByID(1);
+        Location currentLocation = World.LocationByID(World.LOCATION_ID_HOME);
         Console.WriteLine("Welcome to the Text-Based Game!");
         Console.WriteLine("Your starting position is: " + currentLocation.Name);
 
