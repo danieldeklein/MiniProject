@@ -25,10 +25,10 @@ namespace MiniProject.Game
             townSquare.LocationToWest = farmer;
             townSquare.LocationToEast = guardPost;
 
-            farmer.LocationToEast = farmerField;
+            farmer.LocationToWest = farmerField;
             farmer.LocationToEast = townSquare;
 
-            farmerField.LocationToWest = farmer;
+            farmerField.LocationToEast = farmer;
 
             alchemistHut.LocationToNorth = alchemistGarden;
             alchemistHut.LocationToSouth = townSquare;
