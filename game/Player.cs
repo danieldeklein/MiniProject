@@ -8,6 +8,7 @@ public class Player
     public int MaximumHitPoints;
     public string Name;
     private Random RandomNumberGenerator = new Random();
+    public List<Quest> CompletedQuests;
     
     public Player(string Name, int MaximumHitPoints)
     {
@@ -16,6 +17,7 @@ public class Player
         CurrentWeapon = World.WeaponByID(1);
         this.Name = Name;
         this.MaximumHitPoints = MaximumHitPoints;
+        CompletedQuests = new List<Quest>();
     }
     public void Fight(Monster monster)
     {
