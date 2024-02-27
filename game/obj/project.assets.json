@@ -8,26 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Jesse\\.nuget\\packages\\": {}
+    "C:\\Users\\ErikT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\scorro\\Mini project\\MiniProject\\game\\game.csproj",
+      "projectUniqueName": "C:\\Users\\ErikT\\OneDrive\\Documenten\\school\\workspace\\ProjectB\\MiniProject\\game\\game.csproj",
       "projectName": "game",
-      "projectPath": "C:\\scorro\\Mini project\\MiniProject\\game\\game.csproj",
-      "packagesPath": "C:\\Users\\Jesse\\.nuget\\packages\\",
-      "outputPath": "C:\\scorro\\Mini project\\MiniProject\\game\\obj\\",
+      "projectPath": "C:\\Users\\ErikT\\OneDrive\\Documenten\\school\\workspace\\ProjectB\\MiniProject\\game\\game.csproj",
+      "packagesPath": "C:\\Users\\ErikT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ErikT\\OneDrive\\Documenten\\school\\workspace\\ProjectB\\MiniProject\\game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jesse\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ErikT\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -61,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }

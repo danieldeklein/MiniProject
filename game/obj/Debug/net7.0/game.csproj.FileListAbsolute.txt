@@ -1,0 +1,4 @@
+C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\game.AssemblyInfoInputs.cache
+C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\game.AssemblyInfo.cs
+C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\game.csproj.CoreCompileInputs.cache
