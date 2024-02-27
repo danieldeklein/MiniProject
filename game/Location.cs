@@ -6,6 +6,10 @@ class Location
     public string Description;
     public Quest? QuestAvailableHere;
     public Monster? MonsterLivingHere;
+    public Location? LocationToNorth;
+    public Location? LocationToEasth;
+    public Location? LocationToSouth;
+    public Location? LocationToWest;
 
 
     public Location(int ID, string Name, string Description, Quest quest, Monster monster)
