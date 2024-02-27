@@ -7,7 +7,7 @@ class Location
     public Quest? QuestAvailableHere;
     public Monster? MonsterLivingHere;
     public Location? LocationToNorth;
-    public Location? LocationToEasth;
+    public Location? LocationToEast;
     public Location? LocationToSouth;
     public Location? LocationToWest;
 
