@@ -48,12 +48,10 @@ public class Player
                     Console.WriteLine($"You have {CurrentHitPoints} hit points remaining.");
                 }
             }
-<<<<<<< HEAD
-        }    
-        monster.CurrentHitPoints = monster.MaximumHitPoints;
-=======
+        
+            monster.CurrentHitPoints = monster.MaximumHitPoints;
         }
->>>>>>> f5cbc4ac35a299adaf45242624fc0a13b485681c
+
     }
     public void AddWeapon(){
         if (World.QuestByID(1).Completed)
