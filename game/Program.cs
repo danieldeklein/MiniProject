@@ -8,7 +8,7 @@ namespace game
         public int playerX = 3;
         static void Main(string[] args)
         {
-            Console.WriteLine("Your current location is: " + locatie);
+            Console.WriteLine("Your current location is: " + "locatie");
             Console.WriteLine("  P  ");
             Console.WriteLine("  A  ");
             Console.WriteLine("VFTGBS");

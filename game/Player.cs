@@ -31,12 +31,14 @@ public class Player
 
             monster.CurrentHitPoints -= damageToMonster;
             Console.WriteLine($"You hit the {monster.Name} for {damageToMonster} points of damage.");
+            Thread.Sleep(500);
 
             if (monster.CurrentHitPoints <= 0)
             {
-                Console.WriteLine($"The {monster.Name} has been defeated!");
                 CurrentHitPoints = Math.Max(0, CurrentHitPoints - damageToPlayer);
                 Console.WriteLine($"The {monster.Name} hit you for {damageToPlayer} points of damage.");
+                Thread.Sleep(500);
+                Console.WriteLine($"The {monster.Name} has been defeated!");
                 if (CurrentHitPoints <= 0)
                 {
                     Console.WriteLine("You have been defeated!");
@@ -47,7 +49,7 @@ public class Player
                 }
             }
         }    
-    
+        monster.CurrentHitPoints = monster.MaximumHitPoints;
     }
 
 }
