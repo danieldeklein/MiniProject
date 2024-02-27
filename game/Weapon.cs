@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 public class Weapon
 {
     public int ID;

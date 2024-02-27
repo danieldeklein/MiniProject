@@ -13,6 +13,7 @@ C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\refint\game.dll
 C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\game.pdb
 C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\game.genruntimeconfig.cache
 C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\ref\game.dll
+<<<<<<< HEAD
 C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\bin\Debug\net7.0\game.exe
 C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\bin\Debug\net7.0\game.deps.json
 C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\bin\Debug\net7.0\game.runtimeconfig.json
@@ -27,3 +28,20 @@ C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\ob
 C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\game.pdb
 C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\game.genruntimeconfig.cache
 C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\obj\Debug\net7.0\ref\game.dll
+=======
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.AssemblyInfoInputs.cache
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.AssemblyInfo.cs
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.csproj.CoreCompileInputs.cache
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.sourcelink.json
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\refint\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.pdb
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.exe
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.deps.json
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.runtimeconfig.json
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.pdb
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.genruntimeconfig.cache
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\ref\game.dll
+>>>>>>> d18025b5b9beaf7c1502d16a80fdac3cd8e08482
