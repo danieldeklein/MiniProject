@@ -15,8 +15,6 @@ public class Player
         this.Name = Name;
         this.MaximumHitPoints = MaximumHitPoints;
     }
-
-
     public void Fight(Monster monster)
     {
         if (monster == null)
@@ -48,6 +46,12 @@ public class Player
             }
         }    
     
+    }
+    public void AddWeapon(){
+        if (World.QuestByID(1).Completed)
+        {
+            CurrentWeapon = World.WeaponByID(2);
+        }
     }
 
 }
