@@ -13,3 +13,11 @@ C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\refint\game.dll
 C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\game.pdb
 C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\game.genruntimeconfig.cache
 C:\scorro\Mini project\MiniProject\game\obj\Debug\net7.0\ref\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.AssemblyInfoInputs.cache
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.AssemblyInfo.cs
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.csproj.CoreCompileInputs.cache
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.sourcelink.json
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\refint\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.pdb

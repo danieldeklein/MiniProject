@@ -10,6 +10,11 @@ public class Quest
         this.Name = Name;
         this.ID = ID;
         this.Description = Description;
+    }    
+   
+    public void DisplayQuestInfo()
+    {
+        Console.WriteLine($"Quest: {this.Name}");
+        Console.WriteLine($"Description: {this.Description}");
     }
-
 }
