@@ -153,7 +153,7 @@ public static class World
         Locations.Add(spiderField);
     }
 
-    public static Location LocationByID(int id)
+    public static Location? LocationByID(int id)
     {
         foreach (Location location in Locations)
         {
@@ -166,7 +166,7 @@ public static class World
         return null;
     }
 
-    public static Weapon WeaponByID(int id)
+    public static Weapon? WeaponByID(int id)
     {
         foreach (Weapon item in Weapons)
         {
@@ -181,7 +181,7 @@ public static class World
 
 
 
-    public static Monster MonsterByID(int id)
+    public static Monster? MonsterByID(int id)
     {
         foreach (Monster monster in Monsters)
         {
@@ -194,7 +194,7 @@ public static class World
         return null;
     }
 
-    public static Quest QuestByID(int id)
+    public static Quest? QuestByID(int id)
     {
         foreach (Quest quest in Quests)
         {
