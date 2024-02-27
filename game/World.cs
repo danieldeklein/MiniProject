@@ -82,6 +82,7 @@ public static class World
                         "Collect spider silk",
                         "Kill spiders in the spider forest");
 
+        
 
         Quests.Add(clearAlchemistGarden);
         Quests.Add(clearFarmersField);

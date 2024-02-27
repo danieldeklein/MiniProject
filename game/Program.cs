@@ -1,112 +1,126 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-﻿namespace game;
-=======
-﻿﻿namespace game;
->>>>>>> c1b3e8dbe3b2ce08198b4148f46ba2e85a429d76
-
-class Program
-{
-    static void Main(string[] args)
-    {
-<<<<<<< HEAD
-        Console.WriteLine($"{World.Weapons[0].Name} {World.Weapons[0].maximumDamage}");
-    }
-
-=======
-        Console.WriteLine("Hello, World!");
-
-        string[,] map = new string[4, 6]
-        {
-            { " ", " ", "P", " ", " ", " "},
-            { " ", " ", "A", " ", " ", " "},
-            { "V", "F", "T", "G", "B", "S"},
-            { " ", " ", "H", " ", " ", " "}
-        };
-
-        int playerX = 3;
-        int playerY = 6;
-
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 6; j++)
-            {
-                if (i == playerX && j == playerY)
-                {
-                    Console.Write("H");
-                }
-                else
-                {
-                    Console.Write(map[i, j]);
-                }
-            }
-            Console.WriteLine();
-        }
-
-        Console.WriteLine("Choose a direction to move (up, down, left, right):");
-        string? direction = Console.ReadLine();
-
-        if (direction == "up" && playerX > 0)
-        {
-            playerX--;
-        }
-        else if (direction == "down" && playerX < 4)
-        {
-            playerX++;
-        }
-        else if (direction == "left" && playerY > 0)
-        {
-            playerY--;
-        }
-        else if (direction == "right" && playerY < 6)
-        {
-            playerY++;
-        }
-
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                if (i == playerX && j == playerY)
-                {
-                    Console.Write("H");
-                }
-                else
-                {
-                    Console.Write(map[i, j]);
-                }
-            }
-            Console.WriteLine();
-        }
-    }
-    
->>>>>>> c1b3e8dbe3b2ce08198b4148f46ba2e85a429d76
-}
-=======
 ﻿using System;
 
-namespace game
+namespace MiniProject.Game
 {
     class Program
     {
-        public int playerY = 5;
-        public int playerX = 3;
         static void Main(string[] args)
         {
-            Console.WriteLine("Your current location is: " + locatie);
-            Console.WriteLine("  P  ");
-            Console.WriteLine("  A  ");
+            // Create locations
+            Location home = new Location(1, "Your House", "Your starting position", null, null);
+            Location townSquare = new Location(2, "Town Square", "A bustling square in the center of town", null, null);
+            Location farmer = new Location(3, "Farmer", "A friendly farmer's house", null, null);
+            Location farmerField = new Location(4, "Farmer's Field", "A vast field with crops", null, null);
+            Location alchemistHut = new Location(5, "Alchemist's Hut", "A mysterious hut filled with potions", null, null);
+            Location alchemistGarden = new Location(6, "Alchemist's Garden", "A beautiful garden with rare herbs", null, null);
+            Location guardPost = new Location(7, "Guard Post", "A heavily guarded post", null, null);
+            Location bridge = new Location(8, "Bridge", "A sturdy bridge over a river", null, null);
+            Location spiderForest = new Location(9, "Spider Forest", "A dark forest infested with spiders", null, null);
+
+            // Set location connections
+            home.LocationToNorth = townSquare;
+
+            townSquare.LocationToNorth = alchemistHut;
+            townSquare.LocationToSouth = home;
+            townSquare.LocationToWest = farmer;
+            townSquare.LocationToEast = guardPost;
+
+            farmer.LocationToWest = farmerField;
+            farmer.LocationToEast = townSquare;
+
+            farmerField.LocationToEast = farmer;
+
+            alchemistHut.LocationToNorth = alchemistGarden;
+            alchemistHut.LocationToSouth = townSquare;
+
+            alchemistGarden.LocationToSouth = alchemistHut;
+
+            guardPost.LocationToEast = bridge;
+            guardPost.LocationToWest = townSquare;
+
+            bridge.LocationToEast = spiderForest;
+            bridge.LocationToSouth = guardPost;
+
+            spiderForest.LocationToWest = bridge;
+
+
+            // Start the game
+            Location currentLocation = home;
+            Console.WriteLine("Welcome to the Text-Based Game!");
+            Console.WriteLine("Your starting position is: " + currentLocation.Name);
+
+            // Game loop
+            while (true)
+            {
+                PrintMap(currentLocation);
+
+                Console.WriteLine("Enter a direction (north, east, south, west) to move:");
+                string direction = Console.ReadLine().ToLower();
+
+                // Move to the next location based on the direction
+                switch (direction)
+                {
+                    case "north":
+                        if (currentLocation.LocationToNorth != null)
+                        {
+                            currentLocation = currentLocation.LocationToNorth;
+                            Console.WriteLine("You moved to: " + currentLocation.Name);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot move in that direction.");
+                        }
+                        break;
+                    case "east":
+                        if (currentLocation.LocationToEast != null)
+                        {
+                            currentLocation = currentLocation.LocationToEast;
+                            Console.WriteLine("You moved to: " + currentLocation.Name);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot move in that direction.");
+                        }
+                        break;
+                    case "south":
+                        if (currentLocation.LocationToSouth != null)
+                        {
+                            currentLocation = currentLocation.LocationToSouth;
+                            Console.WriteLine("You moved to: " + currentLocation.Name);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot move in that direction.");
+                        }
+                        break;
+                    case "west":
+                        if (currentLocation.LocationToWest != null)
+                        {
+                            currentLocation = currentLocation.LocationToWest;
+                            Console.WriteLine("You moved to: " + currentLocation.Name);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot move in that direction.");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Invalid direction. Please try again.");
+                        break;
+                }
+            }
+        }
+
+        static void PrintMap(Location currentLocation)
+        {
+            Console.WriteLine("  P");
+            Console.WriteLine("  A");
             Console.WriteLine("VFTGBS");
-            Console.WriteLine("  H  ");
-
-            Console.WriteLine("Which direction do you want to go? (north/south/east/west)");
-            string direction = Console.ReadLine();
-
-            // TODO: Handle the user's chosen direction and update the game accordingly
-
-            Console.WriteLine("You chose to go " + direction + "."); // Placeholder output
-
+            Console.WriteLine("  H");
+            Console.WriteLine();
+            Console.WriteLine("Current Location: " + currentLocation.Name);
+            Console.WriteLine("Description: " + currentLocation.Description);
+            Console.WriteLine();
         }
     }
 }
->>>>>>> 54d58b5b04a4bd4450c1a316e98a3115a4b1e992
