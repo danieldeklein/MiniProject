@@ -21,3 +21,10 @@ C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\n
 C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.dll
 C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\refint\game.dll
 C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.pdb
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.exe
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.deps.json
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.runtimeconfig.json
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.dll
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\bin\Debug\net7.0\game.pdb
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\game.genruntimeconfig.cache
+C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\obj\Debug\net7.0\ref\game.dll
