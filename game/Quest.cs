@@ -2,10 +2,10 @@ class Quest
 {
 
     public string Description;
-    public string ID;
+    public int ID;
     public string Name;
 
-    public Quest(string Name, string ID, string Description)
+    public Quest(int ID, string Name, string Description)
     {
         this.Name = Name;
         this.ID = ID;
