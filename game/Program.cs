@@ -1,4 +1,4 @@
-﻿namespace game;
+﻿﻿namespace game;
 
 class Program
 {
