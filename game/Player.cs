@@ -1,4 +1,4 @@
-class Player
+public class Player
 {
 
     public int CurrentHitPoints;
