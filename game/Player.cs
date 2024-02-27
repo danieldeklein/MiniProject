@@ -2,7 +2,7 @@ class Player
 {
 
     public int CurrentHitPoints;
-    public string CurrentLocation;
+    public Location CurrentLocation;
     public Weapon CurrentWeapon;
     public int MaximumHitPoints;
     public string Name;
