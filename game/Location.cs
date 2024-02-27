@@ -21,4 +21,11 @@ public class Location
         MonsterLivingHere = monster;
     }
 
+    public void DisplayOptions()
+    {
+        Console.WriteLine("1. Travel");
+        Console.WriteLine($"2. Fight {MonsterLivingHere?.Name}");
+        Console.WriteLine("3. Quest");
+    }
+
 }
