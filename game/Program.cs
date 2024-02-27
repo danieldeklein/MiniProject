@@ -39,7 +39,7 @@ namespace MiniProject.Game
             guardPost.LocationToWest = townSquare;
 
             bridge.LocationToEast = spiderForest;
-            bridge.LocationToSouth = guardPost;
+            bridge.LocationToWest = guardPost;
 
             spiderForest.LocationToWest = bridge;
 
