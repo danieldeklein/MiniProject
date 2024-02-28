@@ -101,6 +101,15 @@ class Program
 
     static void PrintMap(Location currentLocation)
     {
+        Console.WriteLine("H: Your house");
+        Console.WriteLine("T: Town square");
+        Console.WriteLine("F: Farmer");
+        Console.WriteLine("V: Famer's field");
+        Console.WriteLine("A: Alchemist's hut");
+        Console.WriteLine("P: Alchemist's garden");
+        Console.WriteLine("G: Guard post");
+        Console.WriteLine("B: Bridge");
+        Console.WriteLine("S: Spider field");
         Console.WriteLine("  P");
         Console.WriteLine("  A");
         Console.WriteLine("VFTGBS");
