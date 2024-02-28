@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Player player = new Player("SupaNikka", 100);
         
         // Start the game
         Location? currentLocation = World.LocationByID(World.LOCATION_ID_HOME);
@@ -79,18 +80,13 @@ class Program
                         break;
                 }
             }
-            // if (eersteKeuze == 2)
-            // {
-            //     Console.WriteLine("Player Stats:");
-            //     Console.WriteLine("Name: " + player.Name);
-            //     Console.WriteLine("Current Hit Points: " + player.CurrentHitPoints);
-            //     Console.WriteLine("Maximum Hit Points: " + player.MaximumHitPoints);
-            //     Console.WriteLine("Current Location: " + player.CurrentLocation?.Name);
-            //     Console.WriteLine("Current Weapon: " + player.CurrentWeapon?.Name);
-            // }
+            if (eersteKeuze == 2)
+            {
+                player.DisplayStats();
+            }
             if (eersteKeuze == 3)
             {
-                break;
+                player.Fight(player.CurrentLocation.MonsterLivingHere);
             }
             if (eersteKeuze == 4)
             {
