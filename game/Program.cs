@@ -1,65 +1,61 @@
-﻿using System;
-
-class Program
+﻿class Program
 {
+
     static void Main(string[] args)
     {
         // Start the game
-        Location? currentLocation = World.LocationByID(World.LOCATION_ID_HOME);
         Console.WriteLine("Welcome to the Text-Based Game!");
-        Console.WriteLine("Your starting position is: " + currentLocation?.Name);
-        GameLoop(currentLocation);
+        Console.WriteLine("Your starting position is: " + World.player.CurrentLocation?.Name);
+        GameLoop();
     }
 
-    static void GameLoop(Location? currentLocation)
+    static void GameLoop()
     {
-        bool continueGame = true;
+        Console.WriteLine("What do you want to do?");
+        Console.WriteLine("1. Travel");
+        Console.WriteLine("2. See stats");
+        Console.WriteLine("3. fight");
+        Console.WriteLine("4. Exit");
+        int eersteKeuze = Convert.ToInt32(Console.ReadLine());
 
-        while (continueGame)
+        switch (eersteKeuze)
         {
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("1. Travel");
-            Console.WriteLine("2. See stats");
-            Console.WriteLine("3. fight");
-            Console.WriteLine("4. Exit");
-            int eersteKeuze = Convert.ToInt32(Console.ReadLine());
-
-            switch (eersteKeuze)
-            {
-                case 1:
-                    Travel(currentLocation);
-                    break;
-                case 2:
-                    // See stats logic
-                    break;
-                case 3:
-                    // Fight logic
-                    break;
-                case 4:
-                    continueGame = false;
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice. Please try again.");
-                    break;
-            }
+            case 1:
+                Travel();
+                GameLoop();
+                break;
+            case 2:
+                // See stats logic
+                World.player.DisplayStats();
+                GameLoop();
+                break;
+            case 3:
+                // Fight logic
+                World.player.Fight(World.player.CurrentLocation.MonsterLivingHere);
+                GameLoop();
+                break;
+            default:
+                Console.WriteLine("Invalid choice. Please try again.");
+                GameLoop();
+                break;
         }
     }
 
-    static void Travel(Location? currentLocation)
+    static void Travel()
     {
-        PrintMap(currentLocation);
+        PrintMap();
 
         Console.WriteLine("Enter a direction (north, east, south, west) to move:");
-        string direction = Console.ReadLine()?.ToLower();
+        string direction = (Console.ReadLine() ?? "").ToLower();
 
         // Move to the next location based on the direction
         switch (direction)
         {
             case "north":
-                if (currentLocation?.LocationToNorth != null)
+                if (World.player.CurrentLocation?.LocationToNorth != null)
                 {
-                    currentLocation = currentLocation.LocationToNorth;
-                    Console.WriteLine("You moved to: " + currentLocation?.Name);
+                    World.player.CurrentLocation = World.player.CurrentLocation.LocationToNorth;
+                    Console.WriteLine("You moved to: " + World.player.CurrentLocation?.Name);
                 }
                 else
                 {
@@ -67,10 +63,10 @@ class Program
                 }
                 break;
             case "east":
-                if (currentLocation?.LocationToEast != null)
+                if (World.player.CurrentLocation?.LocationToEast != null)
                 {
-                    currentLocation = currentLocation.LocationToEast;
-                    Console.WriteLine("You moved to: " + currentLocation?.Name);
+                    World.player.CurrentLocation = World.player.CurrentLocation.LocationToEast;
+                    Console.WriteLine("You moved to: " + World.player.CurrentLocation?.Name);
                 }
                 else
                 {
@@ -78,10 +74,10 @@ class Program
                 }
                 break;
             case "south":
-                if (currentLocation?.LocationToSouth != null)
+                if (World.player.CurrentLocation?.LocationToSouth != null)
                 {
-                    currentLocation = currentLocation.LocationToSouth;
-                    Console.WriteLine("You moved to: " + currentLocation?.Name);
+                    World.player.CurrentLocation = World.player.CurrentLocation.LocationToSouth;
+                    Console.WriteLine("You moved to: " + World.player.CurrentLocation?.Name);
                 }
                 else
                 {
@@ -89,10 +85,10 @@ class Program
                 }
                 break;
             case "west":
-                if (currentLocation?.LocationToWest != null)
+                if (World.player.CurrentLocation?.LocationToWest != null)
                 {
-                    currentLocation = currentLocation.LocationToWest;
-                    Console.WriteLine("You moved to: " + currentLocation?.Name);
+                    World.player.CurrentLocation = World.player.CurrentLocation.LocationToWest;
+                    Console.WriteLine("You moved to: " + World.player.CurrentLocation?.Name);
                 }
                 else
                 {
@@ -104,10 +100,10 @@ class Program
                 break;
         }
 
-        GameLoop(currentLocation);
+        GameLoop();
     }
 
-    static void PrintMap(Location? currentLocation)
+    static void PrintMap()
     {
         Console.WriteLine("H: Your house");
         Console.WriteLine("T: Town square");
@@ -125,8 +121,8 @@ class Program
         Console.WriteLine("VFTGBS");
         Console.WriteLine("  H");
         Console.WriteLine();
-        Console.WriteLine("Current Location: " + currentLocation?.Name);
-        Console.WriteLine("Description: " + currentLocation?.Description);
+        Console.WriteLine("Current Location: " + World.player.CurrentLocation?.Name);
+        Console.WriteLine("Description: " + World.player.CurrentLocation?.Description);
         Console.WriteLine();
     }
 }
