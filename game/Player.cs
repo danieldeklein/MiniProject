@@ -11,30 +11,45 @@ public class Player
     
     public Player(string Name, int MaximumHitPoints)
     {
-        CurrentHitPoints = 100;
-        CurrentLocation = World.LocationByID(1);
-        CurrentWeapon = World.WeaponByID(1);
+        CurrentHitPoints = 95;
+        CurrentLocation = World.LocationByID(World.LOCATION_ID_HOME);
+        Inv = new Inventory();
+        Inv.AddWeapon(World.WeaponByID(World.WEAPON_ID_RUSTY_SWORD));
+        CurrentWeapon = World.WeaponByID(World.WEAPON_ID_RUSTY_SWORD);
         this.Name = Name;
         this.MaximumHitPoints = MaximumHitPoints;
         CompletedQuests = new List<Quest>();
-        Inv = new Inventory();
     }
 
     public Inventory GetInventory() => Inv;
 
     public void Fight(Monster monster)
     {
-        if (monster == null || CurrentHitPoints <= 0 || monster.CurrentHitPoints <= 0)
+        if(monster == null) return;
+        if(monster.CurrentHitPoints <= 0)
         {
+            Console.WriteLine($"You defeat {monster.Name}!");
+            Console.WriteLine(monster.Drop(this));
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             return;
         }
-
+        if(CurrentHitPoints <= 0)
+        {
+            Console.WriteLine("You have been defeated!");
+            CurrentHitPoints = MaximumHitPoints;
+            CurrentLocation = World.LocationByID(World.LOCATION_ID_HOME);
+            return;
+        }
         // Ask player what he wants to do:
         // 1. Attack
         // 2. Run
         string input;
         do
         {
+            Console.Clear();
+            Console.WriteLine($"You have {CurrentHitPoints} hit points remaining.");
+            Console.WriteLine($"The {monster.Name} has {monster.CurrentHitPoints} hit points remaining.");
             Console.WriteLine("What do you want to do?");
             Console.WriteLine("1. Attack");
             Console.WriteLine("2. Run");
@@ -53,23 +68,9 @@ public class Player
         Console.WriteLine($"You hit the {monster.Name} for {damageToMonster} points of damage.");
         Thread.Sleep(500);
 
-        if (monster.CurrentHitPoints <= 0)
-        {
-            CurrentHitPoints = Math.Max(0, CurrentHitPoints - damageToPlayer);
-            Console.WriteLine($"The {monster.Name} hit you for {damageToPlayer} points of damage.");
-            Thread.Sleep(500);
-            Console.WriteLine($"The {monster.Name} has been defeated!");
-            if (CurrentHitPoints <= 0)
-            {
-                Console.WriteLine("You have been defeated!");
-            }
-            else
-            {
-                Console.WriteLine($"You have {CurrentHitPoints} hit points remaining.");
-            }
-        }
-
-        monster.CurrentHitPoints = monster.MaximumHitPoints;
+        CurrentHitPoints = Math.Max(0, CurrentHitPoints - damageToPlayer);
+        Console.WriteLine($"The {monster.Name} hit you for {damageToPlayer} points of damage.");
+        Thread.Sleep(1000);
 
         // Recursive call
         Fight(monster);
@@ -83,8 +84,9 @@ public class Player
             2. View Quest progress
             3. Go back
         */
+        Console.Clear();
         Console.WriteLine($"Name: {Name}");
-        Console.WriteLine($"Hit Points: {CurrentHitPoints}");
+        Console.WriteLine($"Hit Points: {CurrentHitPoints}/{MaximumHitPoints}");
         Console.WriteLine($"Weapon equiped: {CurrentWeapon?.Name}");
         Console.WriteLine($"Current Location: {CurrentLocation?.Name}");
         Console.WriteLine("\n");
@@ -112,6 +114,7 @@ public class Player
 
     public void DisplayQuests()
     {
+        Console.Clear();
         Console.WriteLine("Completed Quests:");
         foreach (Quest quest in CompletedQuests)
         {
@@ -119,10 +122,10 @@ public class Player
         }
     }
 
-    public void HealDamage(int hitPointsToHeal)
+    public string HealDamage(int hitPointsToHeal)
     {
         CurrentHitPoints = Math.Min(CurrentHitPoints + hitPointsToHeal, MaximumHitPoints);
-        Console.WriteLine($"You have been healed for {hitPointsToHeal} hit points.");
+        return $"You have been healed for {hitPointsToHeal} hit points.";
     }
 
 
