@@ -15,6 +15,8 @@ public class Monster{
         this.CurrentHitPoints = CurrentHitPoints;
         this.MaximumDamage = MaximumDamage;
         this.MaximumHitPoints = MaximumHitPoints;
+        LootItems = new List<Item>();
+        LootWeapons = new List<Weapon>();
     }
 
     public void DisplayMonsterInfo()
@@ -25,21 +27,45 @@ public class Monster{
         Console.WriteLine($"Maximum Hit Points: {this.MaximumHitPoints}");
     }
 
-    public void Drop(Player p)
+    public string Drop(Player p)
     {
         Random rand = new Random();
         if(rand.NextDouble() > 0.5)
         {
             // Add random Item
-            int choice = rand.Next(LootItems.Count);
-            p.GetInventory().AddItemToInventory(LootItems[choice]);
+            if(LootItems.Count > 0)
+            {
+                int choice = rand.Next(LootItems.Count);
+                p.GetInventory().AddItemToInventory(LootItems[choice]);
+                return $"You found {LootItems[choice].Name}!";
+            }
+            else if(LootWeapons.Count > 0)
+            {
+                // Add random Weapon
+                int choice = rand.Next(LootWeapons.Count);
+                p.GetInventory().AddWeapon(LootWeapons[choice]);
+                return $"You found {LootWeapons[choice].Name}!";
+            }
         }
         else
         {
             // Add random Weapon
-            int choice = rand.Next(LootWeapons.Count);
-            p.GetInventory().AddWeapon(LootWeapons[choice]);
+            if(LootWeapons.Count > 0)
+            {
+                int choice = rand.Next(LootWeapons.Count);
+                p.GetInventory().AddWeapon(LootWeapons[choice]);
+                return $"You found {LootWeapons[choice].Name}!";
+            }
+            else if(LootItems.Count > 0)
+            {
+                // Add random Item
+                int choice = rand.Next(LootItems.Count);
+                p.GetInventory().AddItemToInventory(LootItems[choice]);
+                return $"You found {LootItems[choice].Name}!";
+            }
         }
+
+        return "";
     }
 
 }

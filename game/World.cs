@@ -4,8 +4,10 @@ public static class World
     public static readonly List<Weapon> Weapons = new List<Weapon>();
     public static readonly List<Monster> Monsters = new List<Monster>();
     public static readonly List<Quest> Quests = new List<Quest>();
+    public static readonly List<Item> Items = new List<Item>();
     public static readonly List<Location> Locations = new List<Location>();
     public static readonly Random RandomGenerator = new Random();
+    public static Player player;
 
     public const int WEAPON_ID_RUSTY_SWORD = 1;
     public const int WEAPON_ID_CLUB = 2;
@@ -28,14 +30,22 @@ public static class World
     public const int LOCATION_ID_BRIDGE = 8;
     public const int LOCATION_ID_SPIDER_FIELD = 9;
 
+    public const int ITEM_ID_HEALING_POTION = 1;
+    public const int ITEM_ID_RAT_TAIL = 2;
+    public const int ITEM_ID_SNAKE_SKIN = 3;
+    public const int ITEM_ID_SPIDER_SILK = 4;
+
     static World()
     {
         PopulateWeapons();
         PopulateMonsters();
         PopulateQuests();
         PopulateLocations();
+        Console.WriteLine("What is your name?");
+        string name = Console.ReadLine() ?? "Player";
+        player = new Player(name, 100);
+        player.CurrentLocation = LocationByID(LOCATION_ID_HOME);
     }
-
 
     public static void PopulateWeapons()
     {
@@ -46,7 +56,7 @@ public static class World
     public static void PopulateMonsters()
     {
         Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
-
+        
 
         Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
 
