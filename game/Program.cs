@@ -110,6 +110,8 @@ class Program
         Console.WriteLine("G: Guard post");
         Console.WriteLine("B: Bridge");
         Console.WriteLine("S: Spider field");
+        Console.WriteLine("---------------------------------");
+        Console.WriteLine("Map:");
         Console.WriteLine("  P");
         Console.WriteLine("  A");
         Console.WriteLine("VFTGBS");
