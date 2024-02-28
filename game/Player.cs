@@ -32,6 +32,7 @@ public class Player
             Console.WriteLine(monster.Drop(this));
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+            monster.CurrentHitPoints = monster.MaximumHitPoints;
             return;
         }
         if(CurrentHitPoints <= 0)
@@ -62,7 +63,7 @@ public class Player
         } while (input != "1" && input != "2");
 
         int damageToMonster = RandomNumberGenerator.Next(0, CurrentWeapon?.maximumDamage ?? 1);
-        int damageToPlayer = RandomNumberGenerator.Next(0, monster.MaximumDamage);
+        int damageToPlayer = RandomNumberGenerator.Next(1, monster.MaximumDamage + 1);
 
         monster.CurrentHitPoints -= damageToMonster;
         Console.WriteLine($"You hit the {monster.Name} for {damageToMonster} points of damage.");

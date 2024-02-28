@@ -56,12 +56,17 @@ public static class World
     public static void PopulateMonsters()
     {
         Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
+        rat.LootItems.Add(new Item(ITEM_ID_RAT_TAIL, 1));
         
 
         Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
+        snake.LootItems.Add(new Item(ITEM_ID_SNAKE_SKIN, 1));
+        snake.LootWeapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
 
 
         Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+        giantSpider.LootItems.Add(new Item(ITEM_ID_SPIDER_SILK, 1));
+        giantSpider.LootItems.Add(new Item(ITEM_ID_HEALING_POTION, 2));
 
 
         Monsters.Add(rat);
@@ -87,10 +92,10 @@ public static class World
 
 
         Quest clearSpidersForest =
-                    new Quest(
-                        QUEST_ID_COLLECT_SPIDER_SILK,
-                        "Collect spider silk",
-                        "Kill spiders in the spider forest");
+            new Quest(
+                QUEST_ID_COLLECT_SPIDER_SILK,
+                "Collect spider silk",
+                "Kill spiders in the spider forest");
 
         
 
