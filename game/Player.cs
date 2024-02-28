@@ -121,6 +121,9 @@ public class Player
         {
             Console.WriteLine($"{quest.Name}");
         }
+        Console.WriteLine();
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadLine();
     }
 
     public string HealDamage(int hitPointsToHeal)
