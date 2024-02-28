@@ -69,6 +69,9 @@ public class Inventory
         {
             Console.WriteLine($"{weapon.Name}");
         }
+
+        // Add option to equip weapon, use item, or go back
+
     }
 
 }
