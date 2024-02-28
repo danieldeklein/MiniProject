@@ -3,3 +3,4 @@
 🙇‍♂️Code-Slaaf: Jesse Sminia(moeilijk gay)
 🙇‍♂️Code-Slaaf: Vasili Tzoumas
 🦁Code-Mascotte: Luca Noort
+👑💎All-mighty code lord: Willem-Jaap
