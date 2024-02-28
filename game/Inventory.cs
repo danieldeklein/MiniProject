@@ -56,4 +56,19 @@ public class Inventory
         }
     }
 
+    public void DisplayInventory()
+    {
+        Console.WriteLine("Inventory:");
+        Console.WriteLine("Items:");
+        foreach (Item item in InventoryItems)
+        {
+            Console.WriteLine($"{item.Name} x{item.Amount}");
+        }
+        Console.WriteLine("Weapons:");
+        foreach (Weapon weapon in InventoryWeapons)
+        {
+            Console.WriteLine($"{weapon.Name}");
+        }
+    }
+
 }

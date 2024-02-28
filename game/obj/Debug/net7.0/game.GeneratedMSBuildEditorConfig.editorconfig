@@ -8,10 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = game
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\ErikT\OneDrive\Documenten\school\workspace\ProjectB\MiniProject\game\
-=======
-build_property.ProjectDir = C:\Users\DaanB\OneDrive\Bureaublad\school\Project B\MiniProject\game\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
->>>>>>> d18025b5b9beaf7c1502d16a80fdac3cd8e08482
