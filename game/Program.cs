@@ -5,6 +5,10 @@
     {
         // Start the game
         Console.WriteLine("Welcome to the Text-Based Game!");
+        Console.WriteLine("Your quests to win:");
+        Console.WriteLine("- Kill 3 rats");
+        Console.WriteLine("- Kill 2 snakes");
+        Console.WriteLine("- Kill 2 spiders");
         Console.WriteLine("Your starting position is: " + World.player.CurrentLocation?.Name);
         Item item = new Item(World.ITEM_ID_HEALING_POTION, 1);
         item.Use = () => World.player.HealDamage(5);
@@ -14,6 +18,10 @@
 
     static void GameLoop()
     {
+        if(CheckQuests())
+        {
+            AskEnd();
+        }
         Console.Clear();
         Console.WriteLine("Current location: " + World.player.CurrentLocation?.Name);
         Console.WriteLine("Description: " + World.player.CurrentLocation?.Description);
@@ -151,4 +159,55 @@
         Console.WriteLine("Description: " + World.player.CurrentLocation?.Description);
         Console.WriteLine();
     }
+
+    static bool CheckQuests()
+    {
+        if(World.player.RatKills >= 3)
+        {
+            World.QuestByID(World.QUEST_ID_CLEAR_ALCHEMIST_GARDEN).Completed = true;
+        }
+        if(World.player.SnakeKills >= 2)
+        {
+            World.QuestByID(World.QUEST_ID_CLEAR_FARMERS_FIELD).Completed = true;
+        }
+        if(World.player.SpiderKills >= 2)
+        {
+            World.QuestByID(World.QUEST_ID_COLLECT_SPIDER_SILK).Completed = true;
+        }
+        
+        foreach(Quest q in World.Quests)
+        {
+            bool AlreadyAdded = false;
+            foreach(Quest cq in World.player.CompletedQuests)
+            {
+                if(cq.ID == q.ID) AlreadyAdded = true;;
+            }
+            if(q.Completed && !AlreadyAdded)
+            {
+                World.player.CompletedQuests.Add(q);
+            }
+        }
+
+        return World.player.CompletedQuests.Count >= 3;
+    }
+
+    static void AskEnd()
+    {
+        Console.WriteLine("You finished the gamw, well done!");
+        Console.WriteLine("Do you want to quit(q) or play more (p)");
+        string choice = Console.ReadLine() ?? "";
+        switch(choice)
+        {
+            case "q":
+                Console.WriteLine("Thanks for playing!");
+                Environment.Exit(0);
+                break;
+            case "p":
+                return;
+            default:
+                AskEnd();
+                break;
+        }
+    }
+
 }

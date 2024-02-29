@@ -8,6 +8,9 @@ public class Player
     private Random RandomNumberGenerator = new Random();
     public List<Quest> CompletedQuests;
     public Inventory Inv;
+    public int RatKills = 0;
+    public int SnakeKills = 0;
+    public int SpiderKills = 0;
     
     public Player(string Name, int MaximumHitPoints)
     {
@@ -33,6 +36,20 @@ public class Player
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             monster.CurrentHitPoints = monster.MaximumHitPoints;
+            switch(monster.ID)
+            {
+                case 1:
+                    RatKills++;
+                    break;
+                case 2:
+                    SnakeKills++;
+                    break;
+                case 3:
+                    SpiderKills++;
+                    break;
+                default:
+                    break;
+            }
             return;
         }
         if(CurrentHitPoints <= 0)
