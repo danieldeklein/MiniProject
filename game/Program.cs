@@ -4,6 +4,7 @@
     static void Main(string[] args)
     {
         // Start the game
+        Console.Clear();
         Console.WriteLine("Welcome to the Text-Based Game!");
         Console.WriteLine("Your quests to win:");
         Console.WriteLine("- Kill 3 rats");
@@ -12,7 +13,10 @@
         Console.WriteLine("Your starting position is: " + World.player.CurrentLocation?.Name);
         Item item = new Item(World.ITEM_ID_HEALING_POTION, 1);
         item.Use = () => World.player.HealDamage(5);
+        Item banaan = new Item(World.ITEM_ID_BANANA, 5);
+        banaan.Use = () => World.player.HealDamage(2);
         World.player.GetInventory().AddItemToInventory(item);
+        World.player.GetInventory().AddItemToInventory(banaan);
         GameLoop();
     }
 
@@ -193,7 +197,7 @@
 
     static void AskEnd()
     {
-        Console.WriteLine("You finished the gamw, well done!");
+        Console.WriteLine("You finished the game, well done!");
         Console.WriteLine("Do you want to quit(q) or play more (p)");
         string choice = Console.ReadLine() ?? "";
         switch(choice)

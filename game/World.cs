@@ -34,6 +34,7 @@ public static class World
     public const int ITEM_ID_RAT_TAIL = 2;
     public const int ITEM_ID_SNAKE_SKIN = 3;
     public const int ITEM_ID_SPIDER_SILK = 4;
+    public const int ITEM_ID_BANANA = 5;
 
     static World()
     {
@@ -64,7 +65,7 @@ public static class World
         snake.LootWeapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
 
 
-        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 50, 10, 10);
         giantSpider.LootItems.Add(new Item(ITEM_ID_SPIDER_SILK, 1));
         giantSpider.LootItems.Add(new Item(ITEM_ID_HEALING_POTION, 2));
 

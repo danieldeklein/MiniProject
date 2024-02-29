@@ -25,6 +25,8 @@ public class Item
                 return "Snake Skin";
             case 4:
                 return "Spider Silk";
+            case 5:
+                return "Banana";
             default:
                 return "Unknown";
         }

@@ -110,6 +110,7 @@ public class Player
         Console.WriteLine("\n");
         Console.WriteLine("1. View Inventory");
         Console.WriteLine("2. View Quest progress");
+        Console.WriteLine("3. Go back");
 
         string input = Console.ReadLine() ?? "";
         if(input == "1")
@@ -122,7 +123,7 @@ public class Player
         }
         else if(input == "3")
         {
-            return; // Add return to move menu
+            return;
         }
         else
         {
